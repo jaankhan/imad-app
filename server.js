@@ -16,7 +16,7 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/server-one', function (req, res) {
   res.send('Articel 1 is requested');
 });
-app.get('/account', function (req, res) {
+app.get('/account-one', function (req, res) {
  res.sendFile(path.join(__dirname, 'ui', 'account-one.html'));
 });
 
