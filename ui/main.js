@@ -1,1 +1,1 @@
-console.log('Loaded!');
+var counter = 1 ;
