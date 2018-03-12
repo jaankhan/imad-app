@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articelOne={
+var article={
     title: 'Article One | salman khan',
     heading:'Article one',
     date:'5 sept',
@@ -61,7 +61,7 @@ return htmlTemplate;
 }
 
 app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.send(createTemplate(article));
 });
 
 app.get('/article-two', function (req, res) {
