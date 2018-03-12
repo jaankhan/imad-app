@@ -9,6 +9,21 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var articleTwo={
+    title: 'Article two | salman khan',
+    heading: 'Aricle two',
+    date: '6 sept',
+    content:`<p>
+                this is my second web page. i hope you like it. this is my second  web page. i hope you like it. this is my second  web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it.
+            </p>
+            <p>
+                this is my second web page. i hope you like it. this is my second web page. i hope you like it. this is my second web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it.
+            </p>
+            <p>
+                this is my second  web page. i hope you like it. this is my second web page. i hope you like it. this is my second web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it.
+            </p>`
+};
+
 var articleOne={
     title: 'Article One | salman khan',
     heading:'Article one',
@@ -65,7 +80,7 @@ app.get('/article-one', function (req, res) {
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  res.send(createTemplate(articleTwo));
 });
 
 app.get('/article-three', function (req, res) {
