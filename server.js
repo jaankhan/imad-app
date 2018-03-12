@@ -9,7 +9,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articleTwo={
+var articles={
+    articleTwo: {
     title: 'Article two | salman khan',
     heading: 'Aricle two',
     date: '6 sept',
@@ -22,9 +23,8 @@ var articleTwo={
             <p>
                 this is my second  web page. i hope you like it. this is my second web page. i hope you like it. this is my second web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it.
             </p>`
-};
-
-var articleOne={
+},
+    articleOne: {
     title: 'Article One | salman khan',
     heading:'Article one',
     date:'5 sept',
@@ -38,6 +38,7 @@ var articleOne={
             <p>
                 this is my first web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it. this is my first web page. i hope you like it.
             </p>`
+}
 };
 
 function createTemplate (data){
@@ -75,8 +76,9 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articles', function (req, res) {
+  var articleName = req.param.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
