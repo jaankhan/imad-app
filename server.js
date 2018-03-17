@@ -82,6 +82,13 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
+var names=[];
+app.get('/submit-name/:name', function(req, res){
+   var name=req.params.name;
+   names.push(name);
+   req.send(JSON.stringify(names));
+});
+
 app.get('/:articles', function (req, res) {
   var articleName = req.param.articleName;
   res.send(createTemplate(articles[articleName]));
@@ -107,12 +114,6 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-var names=[];
-app.get('/submit-name/:name', function(req, res){
-   var name=req.params.name;
-   names.push(name);
-   req.send(JSON.stringify(names));
-});
 
 
 
