@@ -15,6 +15,13 @@ app.get('/counter', function (req,res) {
   res.send(counter.toString());
 });
 
+var names=[];
+app.get('/submit-name/:name', function(req, res){
+   var name=req.params.name;
+   names.push(name);
+   req.send(JSON.stringify(names));
+});
+
 var articles={
     articleTwo: {
     title: 'Article two | salman khan',
@@ -82,19 +89,12 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
-var names=[];
-app.get('/submit-name/:name', function(req, res){
-   var name=req.params.name;
-   names.push(name);
-   req.send(JSON.stringify(names));
-});
+
 
 app.get('/:articles', function (req, res) {
   var articleName = req.param.articleName;
   res.send(createTemplate(articles[articleName]));
 });
-
-
 app.get('/article-two', function (req, res) {
   res.send(createTemplate(articleTwo));
 });
