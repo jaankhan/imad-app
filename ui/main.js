@@ -1,8 +1,9 @@
-console.log('Loaded!');
-alert('Hi all');
-var element = getElementById('main-text');
-element.innerHTML = 'This is new line';
-var img = getElementById('madi');
-img.onclick = function(){
-    
+//counter
+
+var counter = 0;
+var button = document.getElementById('button');
+button.onclick = function(){
+  counter = counter + 1;
+  var count = document.getElementById('count');
+  count.innerHTML = counter.toString();
 };
