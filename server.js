@@ -21,7 +21,7 @@ app.get('/submit-name/:name', function(req, res){
    names.push(name);
    req.send(JSON.stringify(names));
 });
-
+/*
 var articles={
     articleTwo: {
     title: 'Article two | salman khan',
@@ -112,7 +112,7 @@ app.get('/ui/madi.png', function (req, res) {
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
+});*/
 
 
 
