@@ -81,11 +81,6 @@ app.get('/:articles', function (req, res) {
   res.send(createTemplate(articles[articleName]));
 });
 
-var counter=0;
-app.get('/counter', function (req,res) {
-  counter = counter +1 ;
-  res.send(counter.toString());
-});
 
 app.get('/article-two', function (req, res) {
   res.send(createTemplate(articleTwo));
@@ -105,6 +100,13 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
+
+var counter=0;
+app.get('/counter', function (req,res) {
+  counter = counter +1 ;
+  res.send(counter.toString());
+});
+
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
